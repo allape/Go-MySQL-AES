@@ -77,6 +77,9 @@ func Decrypt(data, password []byte) ([]byte, error) {
 }
 
 func EncryptAsHex(plain, password string) (HexString, error) {
+	if plain == "" {
+		return "", nil
+	}
 	encrypted, err := Encrypt([]byte(plain), []byte(password))
 	if err != nil {
 		return "", err
@@ -85,7 +88,13 @@ func EncryptAsHex(plain, password string) (HexString, error) {
 }
 
 func DecryptFromHex(encryptedHex, password string) (HexString, error) {
+	if encryptedHex == "" {
+		return "", nil
+	}
 	encrypted, err := hex.DecodeString(encryptedHex)
+	if err != nil {
+		return "", err
+	}
 	plain, err := Decrypt(encrypted, []byte(password))
 	if err != nil {
 		return "", err
