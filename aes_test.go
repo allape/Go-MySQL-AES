@@ -9,7 +9,7 @@ const password = "123456"
 const plain = "你好"
 const encrypted = "62C8DCB75B426AF6A5C0EB2DE5847795"
 
-func TestEncryptAsHex(t *testing.T) {
+func TestEncryptToHex(t *testing.T) {
 	hex, err := EncryptToHex(plain, password)
 	if err != nil {
 		t.Fatal(err)
