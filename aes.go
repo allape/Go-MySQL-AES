@@ -76,7 +76,7 @@ func Decrypt(data, password []byte) ([]byte, error) {
 	return res, nil
 }
 
-func EncryptAsHex(plain, password string) (HexString, error) {
+func EncryptToHex(plain, password string) (HexString, error) {
 	if plain == "" {
 		return "", nil
 	}
