@@ -1,3 +1,3 @@
-module github.com/allape/Go-MySQL-AES
+module github.com/allape/gomysqlaes
 
 go 1.20
